@@ -8,6 +8,19 @@
   height: 100vh;
 }
 
+.headlines{
+  text-align: left;
+  display: inline-block;
+}
+
+.button {
+  cursor: pointer;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: 2px solid #ea2e4e;
+  background: none;
+}
+
 @media (max-width: 600px) {
   
 }

@@ -11,19 +11,14 @@ const Home: NextPage = () => {
 		<Menu show={showMenu} setShowMenu={setShowMenu} />
 
 		<Head>
-			<title>Jacob Juul Larsen</title>
+			<title>Jacob Juul Larsen - Bio</title>
 			<meta name="description" content="Personal website" />
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 
 		<div className={styles.container}>
-
-			<div className={styles.headlines}>
-				<h1>Jacob Juul Larsen</h1>
-				<h2>Web developer</h2>
-			</div>
-
-			<button className={styles.button} onClick={() => setShowMenu(true)}>Lets get started</button>
+			bio
+			<button onClick={() => setShowMenu(true)}>Lets get started</button>
 		</div>
 	</>
 }

@@ -1,17 +1,30 @@
-import styles from '../../styles/Menu.module.css'
+import Link from 'next/link'
+
+import { motion } from 'framer-motion'
+
+import styles from './Menu.module.css'
 
 const Menu  = ({show, setShowMenu}: {show: boolean, setShowMenu: Function}) => {
-	return <>
-		{show && <div className={styles.container}>
+
+	const variants = {
+		open: { opacity: 1, x: 0 },
+		closed: { opacity: 0, x: "-100%" },
+	}
+
+	return (
+		<motion.div 
+			animate={show ? 'open' : 'closed'}
+			variants={variants}
+			className={styles.container}
+		>
+			<Link href="/">Back to home</Link>
+			<Link href="/bio">Bio</Link>
+			<Link href="/work">Work</Link>
+
 			<button onClick={() => setShowMenu(false)}>close</button>
 
-			<ul>
-				<li>nav 1</li>
-				<li>nav 2</li>
-				<li>nav 3</li>
-			</ul>
-		</div>}
-	</>
+		</motion.div>
+	)
 }
 
 export default Menu
