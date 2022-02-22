@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 import styles from './styles.module.css'
 
-const Menu  = () => {
+const Menu: React.FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
 
 	const items = [
@@ -15,8 +15,12 @@ const Menu  = () => {
 		{name: 'Work', ref: '/work'},
 	]
 
+	const toggleMenu = () => {
+		setShowMenu(!showMenu)
+	}
+
 	return (<>
-		<button onClick={() => setShowMenu(!showMenu)} className={styles.closeButton}>
+		<button onClick={toggleMenu} className={styles.closeButton}>
 			<svg width="23" height="23" viewBox="0 0 23 23">
 				<motion.path
 					animate={showMenu ? 'open' : 'closed'}
@@ -71,16 +75,15 @@ const Menu  = () => {
 		>
 
 			{items.map(item => (
-				<motion.div 
-					key={item.name}
-					whileHover={{ scale: 1.3 }}
-					className={styles.link}
-					onClick={() => setShowMenu(false)}
-				>
-					<Link href={item.ref}>
+				<Link href={item.ref} key={item.name} passHref>
+					<motion.div 
+						whileHover={{ scale: 1.3, zIndex: 1 }}
+						className={styles.link}
+						onClick={toggleMenu}
+					>
 						{item.name}
-					</Link>
-				</motion.div>
+					</motion.div>
+				</Link>
 			))}
 
 		</motion.div>
