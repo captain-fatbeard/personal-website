@@ -1,11 +1,12 @@
 :root {
-    --background: #FFF;
+    --background: #fff;
     --text: #1d1d1d;
 
     --design: #1eadff;
     /* --design: #ea2949; */ 
 
     --menu: #1eadff;
+    --menu-text: #fff;
 
     --dark-border: rgb(31, 31, 31);
 }

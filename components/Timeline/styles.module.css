@@ -71,18 +71,6 @@
     padding: 10px 10px 10px 20px;
     margin-bottom: 20px;
     min-height: 80px;
-    border-color: var(--design);
-    border-width: 1px;
-    border-style: solid;
-}
-
-.body::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    position: absolute;
-    left: -20px;
-    top: 35%;
+    border: 1px solid var(--design);
+    background-color: var(--background);
 }

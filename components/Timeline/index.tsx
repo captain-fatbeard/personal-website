@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 import styles from './styles.module.css'
 
 const Timeline: React.FC = () => {
@@ -39,10 +41,11 @@ const Timeline: React.FC = () => {
                         <span className={`${styles.circle} ${event.present && styles.present}`}>&bull;</span>
                         { event.year }
                     </div>
-                    <div className={styles.body}>
+
+                    <motion.div whileHover={{ scale: 1.1}} className={styles.body}>
                         <h2>{ event.title }</h2>
                         <p>{ event.text }</p>
-                    </div>
+                    </motion.div>
                 </div>            
             ))}
         </div>

@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
-
 import Head from 'next/head'
 import Image from 'next/image'
+
+import { motion } from 'framer-motion'
 
 import styles from '../styles/Home.module.css'
 
@@ -20,15 +21,19 @@ const Home: NextPage = () => {
 			</div>
 
 			<div className={styles.contact}>
-				<a target="_blank" href="mailto:jacoblarsen86@live.com" rel="noopener noreferrer">
+				<motion.a whileHover={{ scale: 1.3}} target="_blank" href="mailto:jacoblarsen86@live.com" rel="noopener noreferrer">
 					<Image alt="email me" src='/icon-envelope.svg' width="56" height="40"/>
-				</a>
-				<a target="_blank" href="https://www.linkedin.com/in/larsenjacob/" rel="noopener noreferrer">
+				</motion.a>
+				<motion.a whileHover={{ scale: 1.3}} target="_blank" href="https://www.linkedin.com/in/larsenjacob/" rel="noopener noreferrer">
 					<Image alt="linkedin" src='/icon-linkedin.svg' width="43.2" height="40"/>
-				</a>
+				</motion.a>
 			</div>		
 		</div>
 	</>
 }
+
+
+
+
 
 export default Home
