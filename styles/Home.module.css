@@ -1,26 +1,20 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+	min-height: 100vh;
+	padding: 0 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
-.headlines{
-  text-align: left;
-  display: inline-block;
+.headlines {
+	margin-bottom: 30px;
 }
 
-.button {
-  cursor: pointer;
-  margin: 20px auto;
-  padding: 10px 20px;
-  border: 2px solid #ea2e4e;
-  background: none;
-}
-
-@media (max-width: 600px) {
-  
+.contact {
+	width: 200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 }

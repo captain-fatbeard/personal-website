@@ -1,0 +1,21 @@
+.container {
+    height: 100vh;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.headlines{
+    text-align: left;
+    display: inline-block;
+}
+  
+.button {
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: 2px solid var(--design);
+    background: none;
+}
+  
