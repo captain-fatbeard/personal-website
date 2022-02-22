@@ -4,6 +4,8 @@ import Head from 'next/head'
 
 import styles from '../styles/Home.module.css'
 
+import UnderlinedTitle from '../components/UnderlinedTitle'
+
 const Home: NextPage = () => {
 	return <>
 		<Head>
@@ -13,7 +15,7 @@ const Home: NextPage = () => {
 		</Head>
 
 		<div className={styles.container}>
-			bio
+			<UnderlinedTitle title="bio"/>
 		</div>
 	</>
 }

@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import styles from '../styles/Home.module.css'
 
+import UnderlinedTitle from '../components/UnderlinedTitle'
 import Timeline from '../components/Timeline'
 
 const Home: NextPage = () => {
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
 		</Head>
 
 		<div className={styles.container}>
-			Work
+			<UnderlinedTitle title="work"/>
 			<Timeline />
 		</div>
 	</>
