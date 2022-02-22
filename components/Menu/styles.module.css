@@ -7,14 +7,17 @@
     width: 100vw;
     position: absolute;
     z-index: 1;
-    background-color: aquamarine;
+    background-color: var(--menu);
     opacity: 0
 }
 
 .link {
-    margin: 10px 10px;
+    cursor: pointer;
+    margin: -1px;
+    padding: 20px 20px;
     text-transform: uppercase;
-    border-bottom: 2px solid #000;
+    border: 2px solid var(--dark-border);
+    background-color: var(--menu);
 }
 
 .closeButton {
