@@ -6,7 +6,7 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-    z-index: 9999;
+    z-index: 9;
     background-color: var(--menu);
     opacity: 0
 }
@@ -31,5 +31,5 @@
     height: 50px;
     background: transparent;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
   }
