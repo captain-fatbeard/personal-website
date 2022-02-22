@@ -3,7 +3,8 @@ import { motion } from 'framer-motion'
 import styles from './styles.module.css'
 
 const Timeline: React.FC = () => {
-    const events = [
+
+    const events: {present?: boolean, year: string, title: string, text: string}[] = [
         {
             present: true,
             year: '2020',

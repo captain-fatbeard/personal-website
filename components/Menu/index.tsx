@@ -9,10 +9,11 @@ import styles from './styles.module.css'
 const Menu: React.FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
 
-	const items = [
+	const items: {name: string, ref: string}[] = [
 		{name: 'Back to home', ref: '/'},
-		{name: 'Bio', ref: '/bio'},
-		{name: 'Work', ref: '/work'},
+		{name: 'Me telling a story about me', ref: '/bio'},
+		{name: 'My Proffetionel Timeline', ref: '/work'},
+		{name: 'What I Rock', ref: '/skills'},
 	]
 
 	const toggleMenu = () => {
