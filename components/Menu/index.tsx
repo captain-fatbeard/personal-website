@@ -10,7 +10,7 @@ const Menu: React.FC = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false)
 
 	const items: {name: string, ref: string}[] = [
-		{name: 'Back to home', ref: '/'},
+		{name: 'Contact', ref: '/'},
 		{name: 'Me telling a story about me', ref: '/bio'},
 		{name: 'My Proffetionel Timeline', ref: '/work'},
 		{name: 'What I Rock', ref: '/skills'},
