@@ -1,0 +1,14 @@
+.container {
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+
+.bar {
+    padding: 10px;
+    display: flex;
+    background-color: var(--design);
+    color: var(--design-text);
+
+}
