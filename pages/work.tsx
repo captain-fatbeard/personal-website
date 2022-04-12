@@ -11,12 +11,17 @@ const Home: NextPage = () => {
     const events: {present?: boolean, year: string, title: string, text: string}[] = [
         {
             present: true,
-            year: '2020',
+            year: '2022',
+            title: 'NoA Ignite',
+            text:  'Backend Developer; typescript, nodeJS, express'
+        },
+        {
+            year: '2020 - 2022',
             title: 'Ambition',
             text:  'Tech Lead; Laravel, javascript, react, GCP, kubernetes'
         },
         {
-            year: '2015 - 2019',
+            year: '2015 - 2020',
             title: 'Netbooster / Artefact',
             text:  'Team lead; PHP, javascript, vuejs'
         },
