@@ -27,6 +27,9 @@ const Home: NextPage = () => {
 				<motion.a whileHover={{ scale: 1.3}} target="_blank" href="https://www.linkedin.com/in/larsenjacob/" rel="noopener noreferrer">
 					<Image alt="linkedin" src='/icon-linkedin.svg' width="43.2" height="40"/>
 				</motion.a>
+				<motion.a whileHover={{ scale: 1.3}} target="_blank" href="https://github.com/captain-fatbeard" rel="noopener noreferrer">
+					<Image alt="github" src='/icon-github.svg' width="40" height="40"/>
+				</motion.a>
 			</div>		
 		</div>
 	</>
