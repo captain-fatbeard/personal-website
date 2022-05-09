@@ -18,8 +18,8 @@ const Graph: React.FC<Props> = ({ skillset }) => {
                 <motion.div
                     key={skill.title}
                     className={styles.bar}
-                    animate={{ height: `${skill.level}%` }}
-                    initial={ {height: '0%'} } 
+                    animate={{ width: `${skill.level}%` }}
+                    initial={ {width: '0%'} } 
                     transition={{ ease: 'easeOut', duration: Math.random() * (2 - 0.3) + 0.3 }}
                 >
                     {skill.title}

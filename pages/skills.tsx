@@ -13,35 +13,39 @@ const Skills: NextPage = () => {
         level: number  
     }  
 
-    const basics: Skillset[] = [
+    const frontend: Skillset[] = [
         {title: 'html5, css, scss', level: 90},
-        {title: 'php', level: 95},
         {title: 'javscript', level: 90},
-	]
-    
-    const javscript: Skillset[] = [
-        {title: 'typescipt', level: 30},
+        {title: 'typescipt', level: 55},
         {title: 'jQuery', level: 90},
         {title: 'react', level: 90},
+        {title: 'nextjs', level: 80},
         {title: 'vue', level: 70},
-        {title: 'nodeJS', level: 80},
+        {title: 'webpack', level: 80},
+        {title: 'bootstrap', level: 70},
+        {title: 'material ui', level: 50},
+        {title: 'tailwind', level: 50},
 	]
     
-    const frameworks: Skillset[] = [
-        {title: 'nextjs', level: 80},
+    const backend: Skillset[] = [
+        {title: 'nodeJS', level: 80},
         {title: 'fastify', level: 50},
         {title: 'express', level: 70},
         {title: 'laravel', level: 90},
+        {title: 'yii', level: 80},
+        {title: 'SQL', level: 90},
+        {title: 'php', level: 95},
 	]
     
     const devops: Skillset[] = [
         {title: 'docker', level: 80},
+        {title: 'nginx', level: 80},
         {title: 'kubernetes', level: 70},
         {title: 'gcp', level: 65},
         {title: 'aws', level: 40},
 	]
 
-    const [activeSkillset, setActiveSkillset] = useState<Array<Skillset>>(basics)   
+    const [activeSkillset, setActiveSkillset] = useState<Array<Skillset>>(frontend)   
 
     return <>
 		<Head>
@@ -53,9 +57,8 @@ const Skills: NextPage = () => {
 		<div className={styles.container}>
 			<UnderlinedTitle title="Skills"/>
 
-            <button className={`${styles.button} ${activeSkillset[0].title === basics[0].title && styles.active}`} onClick={() => setActiveSkillset(basics)}>basics</button>
-            <button className={`${styles.button} ${activeSkillset[0].title === javscript[0].title && styles.active}`} onClick={() => setActiveSkillset(javscript)}>javscript and more</button>
-            <button className={`${styles.button} ${activeSkillset[0].title === frameworks[0].title && styles.active}`} onClick={() => setActiveSkillset(frameworks)}>frameworks</button>
+            <button className={`${styles.button} ${activeSkillset[0].title === frontend[0].title && styles.active}`} onClick={() => setActiveSkillset(frontend)}>frontend</button>
+            <button className={`${styles.button} ${activeSkillset[0].title === backend[0].title && styles.active}`} onClick={() => setActiveSkillset(backend)}>backend</button>
             <button className={`${styles.button} ${activeSkillset[0].title === devops[0].title && styles.active}`} onClick={() => setActiveSkillset(devops)}>devops</button>
 
             <Graph skillset={activeSkillset} />
