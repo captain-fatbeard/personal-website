@@ -1,0 +1,14 @@
+.title {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: 25%;
+  bottom: -4px;
+  height: 4px;
+  background: linear-gradient(to left, rgba(125, 185, 232, 0) 0%, var(--design) 100%);
+}
