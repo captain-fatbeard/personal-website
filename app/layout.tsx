@@ -1,5 +1,7 @@
-import { Menu } from './components/Menu';
-import './globals.css';
+import Font from '@/components/Font';
+import { Menu } from '@/components/Menu';
+import '@/styles/design_tokens.css';
+import '@/styles/globals.css';
 
 export const metadata = {
   title: 'Jacob Juul Larsen',
@@ -9,6 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <Font />
       <body>
         {children}
         <Menu />
