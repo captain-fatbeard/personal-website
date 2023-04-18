@@ -11,8 +11,8 @@ export function Menu() {
   const items: { name: string; ref: string }[] = [
     { name: 'Contact', ref: '/' },
     { name: 'Code', ref: '/code' },
-    { name: 'Experince', ref: '/experince' },
     { name: 'Devops', ref: '/devops' },
+    { name: 'Experince', ref: '/experince' },
   ];
 
   const toggleMenu = () => {
