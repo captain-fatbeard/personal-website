@@ -13,7 +13,7 @@ export default function Experince() {
   const events: Event[] = [
     {
       present: true,
-      year: '2022 - ',
+      year: '2022 - present',
       title: 'NoA Ignite',
       text: 'Senior developer; typescript, nodeJS, express',
     },
