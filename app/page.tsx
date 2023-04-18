@@ -1,10 +1,13 @@
-import { UnderlinedTitle } from '@/components/UnderlinedTitle';
 import styles from '@/styles/page.module.css';
+import { UnderlinedTitle } from '@/components/UnderlinedTitle';
+import { Contact } from '@/components/Contact';
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <UnderlinedTitle title="Headline" />
+
+      <Contact />
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia, orci gravida
