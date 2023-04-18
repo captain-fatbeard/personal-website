@@ -82,7 +82,6 @@ export function Menu() {
           ></motion.path>
         </svg>
       </button>
-      ;
     </>
   );
 }
