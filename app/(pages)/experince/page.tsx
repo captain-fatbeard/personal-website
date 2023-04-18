@@ -1,6 +1,6 @@
-import { Timeline } from '@/app/components/Timeline';
-import { UnderlinedTitle } from '../../components/UnderlinedTitle';
-import styles from '../../page.module.css';
+import { Timeline } from '@/components/Timeline';
+import { UnderlinedTitle } from '@/components/UnderlinedTitle';
+import styles from '@/styles/page.module.css';
 
 type Event = {
   present?: boolean;

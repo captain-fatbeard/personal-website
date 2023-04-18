@@ -1,0 +1,23 @@
+:root {
+    --text: #fff;
+    --background: #1d1d1d;
+  
+    --design: #1eadff;
+    --design-text: #fff;
+  
+    --design-v1: #1eadff;
+    --design-v2: #0f5780;
+    --design-v3: #1b9ce6;
+    --design-v4: #0c4566;
+    --design-v5: #188acc;
+    --design-v6: #09344c;
+    --design-v7: #1579b3;
+    --design-v8: #062333;
+  
+    --menu: #1eadff;
+    --menu-text: #fff;
+  
+    --dark-border: rgb(31, 31, 31);
+  
+    --padding: 3rem;
+  }

@@ -1,5 +1,5 @@
-import { UnderlinedTitle } from '../../components/UnderlinedTitle';
-import styles from '../../page.module.css';
+import { UnderlinedTitle } from '@/components/UnderlinedTitle';
+import styles from '@/styles/page.module.css';
 
 export default function Devops() {
   return (
