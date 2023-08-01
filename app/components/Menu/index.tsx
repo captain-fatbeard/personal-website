@@ -10,8 +10,9 @@ export function Menu() {
 
   const items: { name: string; ref: string }[] = [
     { name: 'Contact', ref: '/' },
-    { name: 'Code', ref: '/code' },
-    { name: 'Devops', ref: '/devops' },
+    { name: 'Resume', ref: '/resume' },
+    // { name: 'Code', ref: '/code' },
+    // { name: 'Devops', ref: '/devops' },
     { name: 'Experince', ref: '/experince' },
   ];
 
