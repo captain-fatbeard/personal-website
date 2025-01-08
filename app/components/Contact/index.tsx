@@ -16,7 +16,7 @@ export function Contact() {
         <motion.a
           whileHover={{ scale: 1.3 }}
           target="_blank"
-          href="mailto:jacoblarsen86@live.com"
+          href="mailto:jacoblarsen86@gmail.com"
           rel="noopener noreferrer"
         >
           <Image alt="email me" src="/icon-envelope.svg" width="56" height="40" />
