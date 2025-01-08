@@ -14,7 +14,7 @@ export default function Experince() {
     {
       present: true,
       year: '2023 - present',
-      title: 'Signigly',
+      title: 'Signifly',
       text: 'Senior fullstack developer; typescript, Next, Nest, PHP, Laravel',
     },
     {
