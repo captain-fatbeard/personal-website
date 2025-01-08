@@ -2,6 +2,19 @@ import { UnderlinedTitle } from '@/components/UnderlinedTitle';
 import styles from '@/styles/page.module.css';
 
 export default function About() {
+  const calculateAge = (birthdate: string) => {
+    const birthDate = new Date(birthdate);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    return age;
+  };
+
   return (
     <main className={styles.main}>
       <UnderlinedTitle title="Resume" />
@@ -28,9 +41,10 @@ export default function About() {
       </p>
 
       <p>
-        In my personal life, I reside in Østerbro, Copenhagen, with my wife and our two sons, Otto
-        (6 years old) and Villy (2 years old). During my free time, I enjoy playing football,
-        cycling, and listening to metal music, especially when accompanied by a cold beer.
+        In my personal life, I reside in Østerbro, Copenhagen, with my wife and our two sons, Otto (
+        {calculateAge('2017-05-18')} years old) and Villy ({calculateAge('2021-10-27')} years old).
+        During my free time, I enjoy playing football, cycling, and listening to metal music,
+        especially when accompanied by a cold beer.
       </p>
     </main>
   );
