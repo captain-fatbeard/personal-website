@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/captain-fatbeard/personal-website/compare/v2.0.0...v2.1.0) (2025-01-08)
+
+
+### Features
+
+* update age calculation in resume page ([0cbfee6](https://github.com/captain-fatbeard/personal-website/commit/0cbfee68e70b458b653bafac67710b6f72c34175))
+* update experience page with new job details ([55e0dc9](https://github.com/captain-fatbeard/personal-website/commit/55e0dc9d28adb3960fca686d53fc9514e6e84e7b))
+
+
+### Bug Fixes
+
+* update email address in Contact component ([22a92a9](https://github.com/captain-fatbeard/personal-website/commit/22a92a9a1ef9d063b31d395ab2bf12e9978fb0d1))
+
 ## 2.0.0 (2023-08-02)
 
 
