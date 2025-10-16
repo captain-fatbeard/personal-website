@@ -3,30 +3,34 @@
   "version": "2.1.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
     "start": "next start",
-    "lint": "next lint",
-    "commit": "npx git-cz commit",
-    "release": "standard-version"
+    "lint": "eslint",
+    "commit": "git cz"
   },
   "dependencies": {
-    "framer-motion": "^6.2.6",
-    "next": "^13.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "framer-motion": "^12.23.24",
+    "next": "15.5.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@types/node": "17.0.18",
-    "@types/react": "17.0.39",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "eslint": "8.9.0",
-    "eslint-config-next": "^13.2.4",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.7",
-    "standard-version": "^9.5.0",
-    "typescript": "4.5.5"
+    "prettier": "^3.6.2",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.5",
+    "git-cz": "^4.9.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
   }
 }
