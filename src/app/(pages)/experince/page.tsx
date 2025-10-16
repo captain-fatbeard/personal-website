@@ -1,0 +1,73 @@
+import { Timeline } from '@/components/Timeline';
+import { UnderlinedTitle } from '@/components/UnderlinedTitle';
+import { PageTransition } from '@/components/PageTransition';
+
+type Event = {
+  present?: boolean;
+  year: string;
+  title: string;
+  text: string;
+};
+
+export default function Experience() {
+  const events: Event[] = [
+    {
+      present: true,
+      year: '2023 - Present',
+      title: 'Signifly',
+      text: 'Senior Fullstack Developer - Building scalable web applications using TypeScript, Next.js, Nest.js, PHP, and Laravel. Leading architectural decisions and mentoring junior developers.',
+    },
+    {
+      year: '2022 - 2023',
+      title: 'NoA Ignite',
+      text: 'Senior Developer - Developed enterprise-level solutions with TypeScript, Node.js, and Express. Focused on API design and microservices architecture.',
+    },
+    {
+      year: '2020 - 2022',
+      title: 'Ambition',
+      text: 'Tech Lead - Led a team building modern web applications using Laravel, React, and JavaScript. Managed cloud infrastructure on GCP with Kubernetes orchestration.',
+    },
+    {
+      year: '2015 - 2020',
+      title: 'Netbooster / Artefact',
+      text: 'Team Lead - Managed development teams and delivered client projects using PHP, JavaScript, and Vue.js. Implemented agile methodologies and CI/CD pipelines.',
+    },
+    {
+      year: '2013 - 2015',
+      title: 'Designheroes',
+      text: 'Web Developer - Built custom e-commerce solutions and web applications using PHP frameworks. Specialized in WordPress and WooCommerce development.',
+    },
+    {
+      year: '2012',
+      title: 'Reto-Moto / Heroes & Generals',
+      text: 'Web Developer - Maintained community forums and web infrastructure. Started as a 2-month internship and continued as a part-time developer.',
+    },
+    {
+      year: '2011',
+      title: 'AmPd',
+      text: 'Freelance Web Developer - Provided web development, design, and programming services specializing in HTML5/CSS3 and responsive design.',
+    },
+  ];
+
+  return (
+    <PageTransition>
+      <main className="mx-auto max-w-7xl px-4 py-8 pb-32 sm:px-6 lg:px-8">
+      <UnderlinedTitle title="Professional Experience" />
+
+      <div className="mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10">
+        <p>
+          With over a decade of professional experience in web development, I&apos;ve had the
+          privilege of working with diverse teams and technologies. My journey has taken me from
+          freelance development to leading technical teams at digital agencies and tech companies.
+        </p>
+        <p>
+          Throughout my career, I&apos;ve focused on building scalable, maintainable solutions while
+          staying current with modern development practices and emerging technologies.
+        </p>
+      </div>
+
+      <Timeline events={events} />
+    </main>
+    </PageTransition>
+  );
+}
