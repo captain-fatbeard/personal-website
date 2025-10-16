@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-slate-200 font-sans;
+  }
+
+  h1 {
+    @apply mb-4 text-5xl font-bold leading-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+  }
+
+  h2 {
+    @apply mb-4 text-3xl font-semibold text-slate-300;
+  }
+
+  h3 {
+    @apply mb-3 text-2xl font-semibold text-slate-400;
+  }
+
+  p {
+    @apply mb-4 text-lg leading-relaxed text-slate-300;
+  }
+
+  a {
+    @apply text-blue-400 transition-colors duration-200 hover:text-blue-300;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@theme {
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
