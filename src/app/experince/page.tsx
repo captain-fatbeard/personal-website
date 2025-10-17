@@ -54,18 +54,6 @@ export default function Experience() {
       <main className="mx-auto max-w-7xl px-4 py-8 pb-32 sm:px-6 lg:px-8">
       <UnderlinedTitle title="Professional Experience" />
 
-      <div className="mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10">
-        <p>
-          With over a decade of professional experience in web development, I&apos;ve had the
-          privilege of working with diverse teams and technologies. My journey has taken me from
-          freelance development to leading technical teams at digital agencies and tech companies.
-        </p>
-        <p>
-          Throughout my career, I&apos;ve focused on building scalable, maintainable solutions while
-          staying current with modern development practices and emerging technologies.
-        </p>
-      </div>
-
       <Timeline events={events} />
     </main>
     </PageTransition>

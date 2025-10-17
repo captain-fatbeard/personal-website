@@ -4,15 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import {
+  ContactIcon,
+  UserIcon,
+  BriefcaseIcon,
+  MailIcon,
+  LinkedInIcon,
+  GithubIcon,
+} from '@/components/icons';
 
 export function Menu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const items: { name: string; ref: string; icon: string }[] = [
-    { name: 'Home', ref: '/', icon: '⌂' },
-    { name: 'About', ref: '/resume', icon: '◉' },
-    { name: 'Experience', ref: '/experince', icon: '⚡' },
+  const items: { name: string; ref: string; icon: React.ReactNode }[] = [
+    { name: 'Contact', ref: '/', icon: <ContactIcon /> },
+    { name: 'About', ref: '/resume', icon: <UserIcon /> },
+    { name: 'Experience', ref: '/experince', icon: <BriefcaseIcon /> },
   ];
 
   return (
@@ -25,7 +33,7 @@ export function Menu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
         )}
@@ -35,98 +43,88 @@ export function Menu() {
       <motion.nav
         initial={false}
         animate={{ x: isOpen ? 0 : -280 }}
-        transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-        className="fixed left-0 top-0 z-50 h-screen w-[280px] border-r border-slate-700/50 bg-gradient-to-b from-slate-900/95 to-slate-800/95 backdrop-blur-xl shadow-2xl shadow-blue-500/10"
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        className="fixed left-0 top-0 z-50 h-screen w-[280px] border-r border-slate-800/80 bg-slate-900/98 backdrop-blur-xl shadow-2xl"
       >
         {/* Header */}
-        <div className="border-b border-slate-700/50 p-6">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="flex items-center gap-3"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 text-2xl font-bold text-white shadow-lg shadow-blue-500/50">
+        <div className="border-b border-slate-800/80 px-6 py-8">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-slate-800 text-base font-semibold text-slate-100 ring-1 ring-slate-700/50">
               JL
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-100">Jacob Larsen</h2>
-              <p className="text-xs text-slate-400">Fullstack Developer</p>
+              <h2 className="text-base font-semibold text-slate-100">Jacob Larsen</h2>
+              <p className="text-sm text-slate-400">Fullstack Developer</p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Navigation Items */}
-        <div className="flex flex-col gap-2 p-4">
-          {items.map((item, index) => {
+        <div className="px-3 py-4">
+          {items.map((item) => {
             const isActive = pathname === item.ref;
             return (
-              <motion.div
+              <Link
                 key={item.ref}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 + index * 0.05 }}
+                href={item.ref}
+                onClick={() => setIsOpen(false)}
+                className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 ${
+                  isActive
+                    ? 'bg-slate-800 text-slate-50'
+                    : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'
+                }`}
               >
-                <Link
-                  href={item.ref}
-                  onClick={() => setIsOpen(false)}
-                  className={`group relative flex items-center gap-4 overflow-hidden rounded-xl px-4 py-3.5 transition-all duration-300 ${
-                    isActive
-                      ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 shadow-lg shadow-blue-500/20'
-                      : 'text-slate-300 hover:bg-slate-800/50 hover:text-blue-400'
-                  }`}
-                >
-                  {/* Active indicator */}
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute left-0 top-0 h-full w-1 rounded-r-full bg-gradient-to-b from-blue-400 to-purple-400"
-                      transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                    />
-                  )}
-
-                  {/* Icon */}
-                  <span className="text-2xl transition-transform duration-300 group-hover:scale-110">
-                    {item.icon}
-                  </span>
-
-                  {/* Label */}
-                  <span className="font-semibold">{item.name}</span>
-
-                  {/* Hover effect */}
-                  <div
-                    className={`absolute right-0 top-1/2 h-8 w-8 -translate-y-1/2 translate-x-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 blur-xl transition-all duration-300 group-hover:translate-x-2 group-hover:opacity-30`}
+                {/* Active indicator */}
+                {isActive && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute left-0 top-1/2 h-5 w-0.5 -translate-y-1/2 rounded-r-full bg-slate-50"
+                    transition={{ type: 'spring', damping: 25, stiffness: 300 }}
                   />
-                </Link>
-              </motion.div>
+                )}
+
+                {/* Icon */}
+                <span className="transition-transform duration-200 group-hover:scale-105">
+                  {item.icon}
+                </span>
+
+                {/* Label */}
+                <span className="text-sm font-medium">{item.name}</span>
+              </Link>
             );
           })}
         </div>
 
         {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-slate-700/50 p-4">
-          <div className="flex items-center justify-center gap-3">
+        <div className="absolute bottom-0 left-0 right-0 border-t border-slate-800/80 px-6 py-6">
+          <div className="mb-3 text-xs font-medium uppercase tracking-wide text-slate-500">
+            Connect
+          </div>
+          <div className="flex items-center gap-2">
             <a
               href="mailto:jacoblarsen86@gmail.com"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/50 text-slate-400 transition-all duration-300 hover:bg-blue-500/20 hover:text-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-400 ring-1 ring-slate-700/50 transition-all duration-200 hover:bg-slate-700 hover:text-slate-200"
+              aria-label="Email"
             >
-              ✉
+              <MailIcon />
             </a>
             <a
               href="https://www.linkedin.com/in/larsenjacob/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/50 text-slate-400 transition-all duration-300 hover:bg-blue-500/20 hover:text-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-400 ring-1 ring-slate-700/50 transition-all duration-200 hover:bg-slate-700 hover:text-slate-200"
+              aria-label="LinkedIn"
             >
-              in
+              <LinkedInIcon />
             </a>
             <a
               href="https://github.com/captain-fatbeard"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800/50 text-slate-400 transition-all duration-300 hover:bg-blue-500/20 hover:text-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-400 ring-1 ring-slate-700/50 transition-all duration-200 hover:bg-slate-700 hover:text-slate-200"
+              aria-label="GitHub"
             >
-              gh
+              <GithubIcon />
             </a>
           </div>
         </div>
@@ -135,28 +133,27 @@ export function Menu() {
       {/* Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed left-4 top-4 z-50 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 text-white shadow-lg shadow-blue-500/50 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-blue-500/60"
-        whileHover={{ scale: 1.1 }}
+        animate={{ x: isOpen ? 280 + 16 : 0 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+        className="fixed left-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-900 text-slate-100 shadow-lg ring-1 ring-slate-800/80 transition-colors duration-200 hover:bg-slate-800"
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        aria-label="Toggle menu"
       >
-        <motion.div
-          animate={{ rotate: isOpen ? 90 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="flex flex-col items-center justify-center gap-1.5"
-        >
+        <div className="flex flex-col items-center justify-center gap-1.5">
           <motion.span
-            animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 4 : 0 }}
-            className="h-0.5 w-6 rounded-full bg-white"
+            animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
+            className="h-0.5 w-5 rounded-full bg-slate-100"
           />
           <motion.span
             animate={{ opacity: isOpen ? 0 : 1 }}
-            className="h-0.5 w-6 rounded-full bg-white"
+            className="h-0.5 w-5 rounded-full bg-slate-100"
           />
           <motion.span
-            animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -4 : 0 }}
-            className="h-0.5 w-6 rounded-full bg-white"
+            animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -8 : 0 }}
+            className="h-0.5 w-5 rounded-full bg-slate-100"
           />
-        </motion.div>
+        </div>
       </motion.button>
     </>
   );
