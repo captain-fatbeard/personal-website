@@ -8,6 +8,7 @@ import {
   ContactIcon,
   UserIcon,
   BriefcaseIcon,
+  CodeIcon,
   MailIcon,
   LinkedInIcon,
   GithubIcon,
@@ -21,6 +22,7 @@ export function Menu() {
     { name: 'Contact', ref: '/', icon: <ContactIcon /> },
     { name: 'About', ref: '/resume', icon: <UserIcon /> },
     { name: 'Experience', ref: '/experince', icon: <BriefcaseIcon /> },
+    // { name: 'Projects', ref: '/projects', icon: <CodeIcon /> },
   ];
 
   return (
@@ -61,19 +63,24 @@ export function Menu() {
 
         {/* Navigation Items */}
         <div className="px-3 py-4">
-          {items.map((item) => {
+          {items.map((item, index) => {
             const isActive = pathname === item.ref;
             return (
-              <Link
+              <motion.div
                 key={item.ref}
-                href={item.ref}
-                onClick={() => setIsOpen(false)}
-                className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 ${
-                  isActive
-                    ? 'bg-slate-800 text-slate-50'
-                    : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'
-                }`}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
+                transition={{ delay: index * 0.05, duration: 0.2 }}
               >
+                <Link
+                  href={item.ref}
+                  onClick={() => setIsOpen(false)}
+                  className={`group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 ${
+                    isActive
+                      ? 'bg-slate-800 text-slate-50'
+                      : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'
+                  }`}
+                >
                 {/* Active indicator */}
                 {isActive && (
                   <motion.div
@@ -90,7 +97,8 @@ export function Menu() {
 
                 {/* Label */}
                 <span className="text-sm font-medium">{item.name}</span>
-              </Link>
+                </Link>
+              </motion.div>
             );
           })}
         </div>
@@ -135,7 +143,7 @@ export function Menu() {
         onClick={() => setIsOpen(!isOpen)}
         animate={{ x: isOpen ? 280 + 16 : 0 }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className="fixed left-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-lg bg-slate-900 text-slate-100 shadow-lg ring-1 ring-slate-800/80 transition-colors duration-200 hover:bg-slate-800"
+        className="fixed left-3 top-3 sm:left-4 sm:top-4 z-50 flex h-12 w-12 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-slate-900 text-slate-100 shadow-lg ring-1 ring-slate-800/80 transition-colors duration-200 hover:bg-slate-800 active:bg-slate-700"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Toggle menu"
