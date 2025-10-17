@@ -1,5 +1,10 @@
-import { UnderlinedTitle } from '@/components/UnderlinedTitle';
-import { PageTransition } from '@/components/PageTransition';
+'use client';
+
+import { UnderlinedTitle } from '@/components/underlined-title';
+import { PageTransition } from '@/components/page-transition';
+import { Skills } from '@/components/skills';
+import { DownloadResume } from '@/components/download-resume';
+import { motion } from 'framer-motion';
 
 export default function About() {
   const calculateAge = (birthdate: string) => {
@@ -17,11 +22,19 @@ export default function About() {
 
   return (
     <PageTransition>
-      <main className="mx-auto max-w-7xl px-4 py-8 pb-32 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-8 pb-24 sm:pb-32 sm:px-6 lg:px-8">
       <UnderlinedTitle title="About Me" />
 
-      <div className="mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10">
-        <h3 className="mb-6 border-b border-blue-500/30 pb-2 text-2xl text-blue-400">
+      {/* <DownloadResume /> */}
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mt-8 sm:mt-12 mb-6 sm:mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-5 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10"
+      >
+        <h3 className="mb-4 sm:mb-6 border-b border-blue-500/30 pb-2 text-xl sm:text-2xl text-blue-400">
           Professional Background
         </h3>
         <p>
@@ -38,10 +51,16 @@ export default function About() {
           experience. I enjoy collaborating with cross-functional teams to achieve successful
           project outcomes.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10">
-        <h3 className="mb-6 border-b border-blue-500/30 pb-2 text-2xl text-blue-400">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="mb-6 sm:mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-5 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10"
+      >
+        <h3 className="mb-4 sm:mb-6 border-b border-blue-500/30 pb-2 text-xl sm:text-2xl text-blue-400">
           Education & Journey
         </h3>
         <p>
@@ -50,10 +69,16 @@ export default function About() {
           coding, my love for programming has been a constant in my life. I started coding at the
           age of 12 and have been professionally working as a full-time web developer since 2013.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10">
-        <h3 className="mb-6 border-b border-blue-500/30 pb-2 text-2xl text-blue-400">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mb-6 sm:mb-8 rounded-xl border border-slate-700/50 bg-slate-800/50 p-5 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10"
+      >
+        <h3 className="mb-4 sm:mb-6 border-b border-blue-500/30 pb-2 text-xl sm:text-2xl text-blue-400">
           Personal Life
         </h3>
         <p>
@@ -62,7 +87,20 @@ export default function About() {
           old). During my free time, I enjoy playing football, cycling, and listening to metal
           music, especially when accompanied by a cold beer.
         </p>
-      </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="mt-12 sm:mt-16"
+      >
+        <h3 className="mb-6 sm:mb-8 border-b border-blue-500/30 pb-3 text-2xl sm:text-3xl text-blue-400">
+          Skills & Technologies
+        </h3>
+        <Skills />
+      </motion.div>
     </main>
     </PageTransition>
   );

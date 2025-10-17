@@ -1,6 +1,6 @@
-import { Timeline } from '@/components/Timeline';
-import { UnderlinedTitle } from '@/components/UnderlinedTitle';
-import { PageTransition } from '@/components/PageTransition';
+import { Timeline } from '@/components/timeline';
+import { UnderlinedTitle } from '@/components/underlined-title';
+import { PageTransition } from '@/components/page-transition';
 
 type Event = {
   present?: boolean;
@@ -51,7 +51,7 @@ export default function Experience() {
 
   return (
     <PageTransition>
-      <main className="mx-auto max-w-7xl px-4 py-8 pb-32 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-8 pb-24 sm:pb-32 sm:px-6 lg:px-8">
       <UnderlinedTitle title="Professional Experience" />
 
       <Timeline events={events} />
