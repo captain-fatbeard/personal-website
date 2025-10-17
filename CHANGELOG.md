@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/captain-fatbeard/personal-website/compare/v2.1.1...v2.2.0) (2025-10-17)
+
+
+### Features
+
+* enhance homepage with animations and improve layout ([c89bea0](https://github.com/captain-fatbeard/personal-website/commit/c89bea08e3095a0ed3c0264258000508239f19b4))
+* restructure homepage and add new experience and about sections; introduce icon components for navigation ([e1f9810](https://github.com/captain-fatbeard/personal-website/commit/e1f9810f9e3cf828591808003285f83e271df288))
+
 ### [2.1.1](https://github.com/captain-fatbeard/personal-website/compare/v2.1.0...v2.1.1) (2025-01-08)
 
 
